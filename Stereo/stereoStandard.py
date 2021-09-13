@@ -35,28 +35,29 @@ def scan_one_pic():
     return None
 
 
-def standard():
+def standard(path, corner_shape):
     """
     使用原版的寻找角点函数，显式进行精细化，速度快
     :return:
     """
     # 设置寻找亚像素角点的参数，采用的停止准则是最大循环次数30和最大误差容限0.001
     criteria = (cv2.TERM_CRITERIA_MAX_ITER | cv2.TERM_CRITERIA_EPS, 30, 0.001)
+    h, w = corner_shape
     # 获取标定板角点的位置
-    objp = np.zeros((6 * 9, 3), np.float32)
-    objp[:, :2] = np.mgrid[0:9, 0:6].T.reshape(-1, 2)  # 将世界坐标系建在标定板上，所有点的Z坐标全部为0，所以只需要赋值x和y
+    objp = np.zeros((h * w, 3), np.float32)
+    objp[:, :2] = np.mgrid[0:w, 0:h].T.reshape(-1, 2)  # 将世界坐标系建在标定板上，所有点的Z坐标全部为0，所以只需要赋值x和y
     obj_points = []  # 存储3D点
     img_points = []  # 存储2D点
-    images = glob.glob("./pic/*.JPG")
+    images = glob.glob(path)
     for fname in images:
         img = cv2.imread(fname)
         cv2.namedWindow('img', cv2.WINDOW_NORMAL)
         cv2.imshow('img', img)
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         size = gray.shape[::-1]
-        ret, corners = cv2.findChessboardCorners(gray, (6, 9))
-        print(ret)
-        print(corners.shape)
+        ret, corners = cv2.findChessboardCorners(gray, (h, w))
+        # print(ret)
+        # print(corners.shape)
         if ret:
             obj_points.append(objp)
             corners2 = cv2.cornerSubPix(gray, corners, (5, 5), (-1, -1), criteria)  # 在原角点的基础上寻找亚像素角点
@@ -66,9 +67,9 @@ def standard():
             else:
                 img_points.append(corners)
 
-            cv2.drawChessboardCorners(img, (9, 6), corners, ret)  # 记住，OpenCV的绘制函数一般无返回值
+            cv2.drawChessboardCorners(img, (w, h), corners, ret)  # 记住，OpenCV的绘制函数一般无返回值
             cv2.imshow('img', img)
-            # cv2.waitKey(500)
+            # cv2.waitKey(0)
 
     print(len(img_points))
     cv2.destroyAllWindows()
@@ -100,7 +101,7 @@ def find_corner_v2():
         if ret:
             cv2.drawChessboardCorners(img, patter_size, corner, ret)
             cv2.imshow('img', img)
-            cv2.waitKey(500)
+            cv2.waitKey(10)
 
 
 def correct_image(pic_path, out_path, mtx, dist):
@@ -117,8 +118,17 @@ def correct_image(pic_path, out_path, mtx, dist):
 
 
 def main():
-    sret, mtx, dist, rvecs, tvec = standard()
-    correct_image('./test_pic/origin_1.jpg', './test_pic/origin_fixed_1.jpg', mtx, dist)
+    path = "./even/右1/*.jpg"
+    sret, mtx, dist, rvecs, tvec = standard(path, (8, 11))
+    images = glob.glob(path)
+    for image in images:
+        print(image)
+        paths = image.split('/')
+        prefix = paths[:-1]
+        image_names = paths[-1].split('_')
+        image_name = image_names[0] + '_fix_' + image_names[1]
+        correct_image(image, "./test_pic/右1/{}".format(image_name), mtx, dist)
+    # correct_image(, mtx, dist)
     # find_corner_v2()
 
 
