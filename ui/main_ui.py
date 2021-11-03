@@ -22,19 +22,19 @@ class MY_GUI:
 
         self.file_menu = Menu(self.menu_bar)
         self.file_menu.add_command(label='打开场景', command=self.hello)
-        self.file_menu.add_command(label='保存识别结果')
         self.file_menu.add_command(label='关闭场景')
         self.file_menu.add_command(label='重新载入场景')
+        self.file_menu.add_command(label='保存识别结果')
         self.file_menu.add_command(label='退出', command=self.init_window_name.quit)
 
         self.connect_menu = Menu(self.menu_bar)
-        self.connect_menu.add_command(label='连接')
+        self.connect_menu.add_command(label='建立连接')
         self.connect_menu.add_command(label='在线识别')
         self.connect_menu.add_command(label='设置')
         self.connect_menu.add_command(label='断开连接')
 
         self.about_menu = Menu(self.menu_bar)
-        self.about_menu.add_command(label='关于')
+        self.about_menu.add_command(label='关于系统')
         self.about_menu.add_command(label='帮助')
 
         self.menu_bar.add_cascade(label='文件', menu=self.file_menu)
