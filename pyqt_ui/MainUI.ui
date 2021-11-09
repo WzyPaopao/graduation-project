@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>566</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>751</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>PushButton</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>PushButton</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>370</y>
+      <width>751</width>
+      <height>131</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="actionclose_session_file"/>
+    <addaction name="actionreload_session_file"/>
+    <addaction name="separator"/>
+    <addaction name="actionsave_recognize_result"/>
+    <addaction name="separator"/>
+    <addaction name="actionquit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>连接</string>
+    </property>
+    <addaction name="actionbuild_connection"/>
+    <addaction name="actionclose_connect"/>
+    <addaction name="separator"/>
+    <addaction name="actionrecognize_online"/>
+    <addaction name="actionpreference"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="actionabout_system"/>
+    <addaction name="actionhelo"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>识别</string>
+    </property>
+    <addaction name="actionstart_recognize"/>
+    <addaction name="actiononline_recognize"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action"/>
+   <addaction name="actionstart_recognize"/>
+   <addaction name="actiononline_recognize"/>
+  </widget>
+  <action name="action">
+   <property name="text">
+    <string>open session file</string>
+   </property>
+  </action>
+  <action name="actionclose_session_file">
+   <property name="text">
+    <string>close session file</string>
+   </property>
+  </action>
+  <action name="actionreload_session_file">
+   <property name="text">
+    <string>reload session file</string>
+   </property>
+  </action>
+  <action name="actionsave_recognize_result">
+   <property name="text">
+    <string>save recognize result</string>
+   </property>
+  </action>
+  <action name="actionquit">
+   <property name="text">
+    <string>quit</string>
+   </property>
+  </action>
+  <action name="actionbuild_connection">
+   <property name="text">
+    <string>build connection</string>
+   </property>
+  </action>
+  <action name="actionrecognize_online">
+   <property name="text">
+    <string>recognize online</string>
+   </property>
+  </action>
+  <action name="actionpreference">
+   <property name="text">
+    <string>preference</string>
+   </property>
+  </action>
+  <action name="actionclose_connect">
+   <property name="text">
+    <string>close connect</string>
+   </property>
+  </action>
+  <action name="actionabout_system">
+   <property name="text">
+    <string>about</string>
+   </property>
+  </action>
+  <action name="actionhelo">
+   <property name="text">
+    <string>help</string>
+   </property>
+  </action>
+  <action name="actionstart_recognize">
+   <property name="text">
+    <string>start recognize</string>
+   </property>
+  </action>
+  <action name="actiononline_recognize">
+   <property name="text">
+    <string>online recognize</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
