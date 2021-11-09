@@ -5,7 +5,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from vtk.qt.QVTKRenderWindowInteractor import QVTKRenderWindowInteractor
 from testvtkgui import Ui_MainWindow
 # import pcl.pcl_visualization
-from open3d import *
+import open3d as o3d
+import numpy as np
 
 
 class Mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -27,10 +28,12 @@ class Mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # fileName = "D:\\rabbit.pcd";  # 注意更换自己的pcd点云文件
         # cloud = pcl.load_XYZRGB(fileName)
         fileName = './rabbit.pcd'
-        cloud = o3d.io.read_point_cloud(fileName)
+        pcd = o3d.io.read_point_cloud(fileName)
+        # cloud = pcl.load_XYZRGB(fileName)
+        cloud = np.asarray(pcd.points)
 
         poins = vtk.vtkPoints()
-        for i in range(cloud.size):
+        for i in range(cloud.shape[0]):
             dp = cloud[i]
             poins.InsertNextPoint(dp[0], dp[1], dp[2])
 
