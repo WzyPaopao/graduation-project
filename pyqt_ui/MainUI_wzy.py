@@ -30,12 +30,17 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName("verticalLayout")
 
         self.pushButton = QtWidgets.QPushButton(self.widget)
-        # self.pushButton.setObjectName("pushButton")
+        self.pushButton.setObjectName("pushButton")
         self.pushButton.setText("打开相机")
         self.verticalLayout.addWidget(self.pushButton)
 
+        self.button_pcl = QtWidgets.QPushButton(self.widget)
+        self.button_pcl.setObjectName("button_pcl")
+        self.button_pcl.setText("打开点云窗口")
+        self.verticalLayout.addWidget(self.button_pcl)
+
         self.pushButton_2 = QtWidgets.QPushButton(self.widget)
-        # self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.setText("退出")
         self.verticalLayout.addWidget(self.pushButton_2)
 
@@ -133,10 +138,10 @@ class Ui_MainWindow(object):
         self.pushButton_2.clicked.connect(self.main_window.close)
 
     def onClick_button_open_camera(self):
-        if self.timer_camera.isActive() == False:  # 若定时器未启动
+        if self.timer_camera.isActive() is False:  # 若定时器未启动
             flag = self.cap.open(self.CAM_NUM)  # 参数是0，表示打开笔记本的内置摄像头，参数是视频文件路径则打开视频
-            if flag == False:  # flag表示open()成不成功
-                msg = QtWidgets.QMessageBox.warning(self, 'warning', "请检查相机于电脑是否连接正确", buttons=QtWidgets.QMessageBox.Ok)
+            if flag is False:  # flag表示open()成不成功
+                msg = QtWidgets.QMessageBox.warning(self.main_window, 'warning', "请检查相机于电脑是否连接正确", buttons=QtWidgets.QMessageBox.Ok)
             else:
                 self.timer_camera.start(30)  # 定时器开始计时30ms，结果是每过30ms从摄像头中取一帧显示
                 self.pushButton.setText('关闭相机')
@@ -159,8 +164,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "PushButton"))
-        self.pushButton_2.setText(_translate("MainWindow", "PushButton"))
+        self.pushButton.setText(_translate("MainWindow", "打开相机"))
+        self.pushButton_2.setText(_translate("MainWindow", "退出"))
+        self.button_pcl.setText(_translate("MainWindow", "打开点云"))
         self.label.setText(_translate("MainWindow", "TextLabel"))
         self.menu.setTitle(_translate("MainWindow", "文件"))
         self.menu_2.setTitle(_translate("MainWindow", "连接"))
