@@ -33,7 +33,7 @@ class QPushButtonDemo(QDialog):
         self.btn1.toggle()
 
         self.btn2 = QPushButton("图像按钮")
-        self.btn2.setIcon(QIcon(QPixmap("./icon.ico")))
+        self.btn2.setIcon(QIcon(QPixmap("../images/icon.ico")))
 
         self.btn3 = QPushButton("不可用的按钮")
         self.btn3.setEnabled(False)

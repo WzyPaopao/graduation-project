@@ -53,7 +53,7 @@ class ClipBoard(QtWidgets.QDialog):
 
     def copyImage(self):
         clipboard = QtWidgets.QApplication.clipboard()
-        clipboard.setPixmap(QtGui.QPixmap('../controls/icon.ico'))
+        clipboard.setPixmap(QtGui.QPixmap('../images/icon.ico'))
 
     def pasteImage(self):
         clipboard = QtWidgets.QApplication.clipboard()

@@ -42,7 +42,7 @@ class QLabelDemo(QWidget):
 
         label3.setAlignment(Qt.AlignCenter)
         label3.setToolTip("这是一个图片标签")
-        label3.setPixmap(QPixmap("./icon.ico"))
+        label3.setPixmap(QPixmap("../images/icon.ico"))
 
         label4.setOpenExternalLinks(True)
         label4.setText("<a href=\"https://item.jd.com/12417265.html\">感谢关注《Python从菜鸟到高手》</a>")

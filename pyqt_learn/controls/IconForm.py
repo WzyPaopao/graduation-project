@@ -14,7 +14,7 @@ class IconForm(QtWidgets.QMainWindow):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    app.setWindowIcon(QtGui.QIcon("./icon.ico"))
+    app.setWindowIcon(QtGui.QIcon("../images/icon.ico"))
     main = IconForm()
     main.show()
     sys.exit(app.exec_())
