@@ -16,6 +16,10 @@ class DateTimeEdit(QWidget):
         layout = QVBoxLayout()
         dateTimeEdit1 = QDateTimeEdit()
         dateTimeEdit2 = QDateTimeEdit(QDateTime.currentDateTime())
+        dateTimeEdit1.setMinimumDate(QDate.currentDate().addDays(-365))
+        dateTimeEdit1.setMaximumDate(QDate.currentDate().addDays(365))
+
+        dateTimeEdit2.setCalendarPopup(True)
 
         dateEdit = QDateTimeEdit(QDate.currentDate())
         timeEdit = QDateTimeEdit(QTime.currentTime())
