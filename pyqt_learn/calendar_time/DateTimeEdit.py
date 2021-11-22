@@ -29,12 +29,25 @@ class DateTimeEdit(QWidget):
         dateEdit.setDisplayFormat("yyyy.MM.dd")
         timeEdit.setDisplayFormat("HH:mm:ss")
 
+        dateTimeEdit1.dateChanged.connect(self.onDateChange)
+        dateTimeEdit1.timeChanged.connect(self.onTimeChange)
+        dateTimeEdit1.dateTimeChanged.connect(self.onDateTimeChange)
+
         layout.addWidget(dateTimeEdit1)
         layout.addWidget(dateTimeEdit2)
         layout.addWidget(dateEdit)
         layout.addWidget(timeEdit)
 
         self.setLayout(layout)
+
+    def onDateChange(self, date):
+        print(date)
+
+    def onTimeChange(self, time):
+        print(time)
+
+    def onDateTimeChange(self, date_time):
+        print(date_time)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
