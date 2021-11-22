@@ -19,6 +19,8 @@ class DateTimeEdit(QWidget):
         dateTimeEdit1.setMinimumDate(QDate.currentDate().addDays(-365))
         dateTimeEdit1.setMaximumDate(QDate.currentDate().addDays(365))
 
+        self.dateTimeEdit = dateTimeEdit1
+
         dateTimeEdit2.setCalendarPopup(True)
 
         dateEdit = QDateTimeEdit(QDate.currentDate())
@@ -33,10 +35,14 @@ class DateTimeEdit(QWidget):
         dateTimeEdit1.timeChanged.connect(self.onTimeChange)
         dateTimeEdit1.dateTimeChanged.connect(self.onDateTimeChange)
 
+        self.btn = QPushButton("get current selected time")
+        self.btn.clicked.connect(self.onBtnClick)
+
         layout.addWidget(dateTimeEdit1)
         layout.addWidget(dateTimeEdit2)
         layout.addWidget(dateEdit)
         layout.addWidget(timeEdit)
+        layout.addWidget(self.btn)
 
         self.setLayout(layout)
 
@@ -48,6 +54,19 @@ class DateTimeEdit(QWidget):
 
     def onDateTimeChange(self, date_time):
         print(date_time)
+
+    def onBtnClick(self):
+        dateTime = self.dateTimeEdit.dateTime()
+        print(dateTime)
+
+        # 最大日期
+        print('最大日期：', self.dateTimeEdit.maximumDate())
+        # 最大日期和时间
+        print('最大日期和时间：', self.dateTimeEdit.maximumDateTime())
+        # 最小日期
+        print('最小日期：', self.dateTimeEdit.minimumDate())
+        # 最小日期和时间
+        print('最小日期和时间：', self.dateTimeEdit.minimumDateTime())
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
