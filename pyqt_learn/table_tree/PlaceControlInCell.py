@@ -1,7 +1,9 @@
 '''
 在单元格中放置控件
 
-setCellWidget
+使用 setItem() 将文本放置到单元格中
+使用 setCellWidget() 将控件放置到单元格中
+使用 setStyleSheet() 设定控件样式（QSS，类似于CSS）
 
 '''
 
