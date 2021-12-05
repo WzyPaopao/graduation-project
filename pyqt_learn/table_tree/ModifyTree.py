@@ -50,27 +50,40 @@ class ModifyTree(QMainWindow):
         child4.setText(1, '4')
 
         self.tree.clicked.connect(self.onTreeClicked)
-        main_layout = QVBoxLayout(self)
+        self.tree.expandAll()
+
+        main_layout = QVBoxLayout()
         main_layout.addLayout(operator_layout)
         main_layout.addWidget(self.tree)
 
-        self.setLayout(main_layout)
-
+        widget = QWidget()
+        widget.setLayout(main_layout)
+        self.setCentralWidget(widget)
 
     def onTreeClicked(self, index):
         row = self.tree.currentItem()
         print(index.row())
         print('Key={}, Value={}'.format(row.text(0), row.text(1)))
 
-
     def add_node(self):
-        pass
+        print('add node')
+        item = self.tree.currentItem()
+        print(item)
+        node = QTreeWidgetItem(item)
+        node.setText(0, 'node')
+        node.setText(1, 'value')
 
     def update_node(self):
-        pass
+        print('update node')
+        item = self.tree.currentItem()
+        item.setText(0, 'up node')
+        item.setText(1, 'up value')
 
     def delete_node(self):
-        pass
+        print('delete node')
+        root = self.tree.invisibleRootItem()
+        for item in self.tree.selectedItems():
+            (item.parent() or root).removeChild(item)
 
 
 if __name__ == '__main__':
