@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/wzy/projects/master_degreee/kinect_test/libfreenect2/bu
 include CMakeFiles/install-openni2.dir/progress.make
 
 CMakeFiles/install-openni2: lib/libfreenect2-openni2.so
-	/usr/bin/cmake -E copy_directory /home/wzy/freenect2/lib/OpenNI2/Drivers/ /usr/lib/OpenNI2/Drivers/
+	/usr/bin/cmake -E copy_directory /usr/local/lib/OpenNI2/Drivers/ /usr/lib/OpenNI2/Drivers/
 
 install-openni2: CMakeFiles/install-openni2
 install-openni2: CMakeFiles/install-openni2.dir/build.make
