@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'MainUi_2.0.ui'
+# Form implementation generated from reading ui file 'MainUi_2_0.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -17,158 +17,116 @@ class Ui_MainWindow(object):
         MainWindow.resize(1302, 745)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-
         self.widget = QtWidgets.QWidget(self.centralwidget)
         self.widget.setGeometry(QtCore.QRect(210, 20, 461, 481))
         self.widget.setObjectName("widget")
-
-        # 表单布局
         self.formLayoutWidget = QtWidgets.QWidget(self.widget)
         self.formLayoutWidget.setGeometry(QtCore.QRect(10, 10, 441, 461))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
-
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
         self.formLayout.setObjectName("formLayout")
-
         self.widget_2 = QtWidgets.QWidget(self.centralwidget)
         self.widget_2.setGeometry(QtCore.QRect(700, 20, 581, 481))
         self.widget_2.setObjectName("widget_2")
-
         self.label = QtWidgets.QLabel(self.widget_2)
         self.label.setGeometry(QtCore.QRect(270, 210, 60, 16))
         self.label.setObjectName("label")
-
         self.widget_3 = QtWidgets.QWidget(self.centralwidget)
         self.widget_3.setGeometry(QtCore.QRect(20, 20, 161, 481))
         self.widget_3.setObjectName("widget_3")
-
         self.widget1 = QtWidgets.QWidget(self.widget_3)
         self.widget1.setGeometry(QtCore.QRect(20, 10, 113, 191))
         self.widget1.setObjectName("widget1")
-
         self.verticalLayout = QtWidgets.QVBoxLayout(self.widget1)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
-
         self.pushButton = QtWidgets.QPushButton(self.widget1)
         self.pushButton.setObjectName("pushButton")
-
         self.verticalLayout.addWidget(self.pushButton)
-
         self.pushButton_2 = QtWidgets.QPushButton(self.widget1)
         self.pushButton_2.setObjectName("pushButton_2")
-
         self.verticalLayout.addWidget(self.pushButton_2)
-
         self.pushButton_3 = QtWidgets.QPushButton(self.widget1)
         self.pushButton_3.setObjectName("pushButton_3")
-
         self.verticalLayout.addWidget(self.pushButton_3)
-
         self.widget2 = QtWidgets.QWidget(self.widget_3)
         self.widget2.setGeometry(QtCore.QRect(20, 250, 116, 142))
         self.widget2.setObjectName("widget2")
-
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.widget2)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-
         self.label_2 = QtWidgets.QLabel(self.widget2)
         self.label_2.setObjectName("label_2")
         self.verticalLayout_2.addWidget(self.label_2)
-
         self.checkBox = QtWidgets.QCheckBox(self.widget2)
         self.checkBox.setObjectName("checkBox")
         self.verticalLayout_2.addWidget(self.checkBox)
-
         self.checkBox_2 = QtWidgets.QCheckBox(self.widget2)
         self.checkBox_2.setObjectName("checkBox_2")
         self.verticalLayout_2.addWidget(self.checkBox_2)
-
         self.checkBox_3 = QtWidgets.QCheckBox(self.widget2)
         self.checkBox_3.setObjectName("checkBox_3")
         self.verticalLayout_2.addWidget(self.checkBox_3)
-
         self.pushButton_4 = QtWidgets.QPushButton(self.widget2)
         self.pushButton_4.setObjectName("pushButton_4")
         self.verticalLayout_2.addWidget(self.pushButton_4)
-
         self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser.setGeometry(QtCore.QRect(20, 520, 1261, 131))
         self.textBrowser.setObjectName("textBrowser")
-
         MainWindow.setCentralWidget(self.centralwidget)
-
-        # 状态栏配置
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1302, 24))
+        self.menubar.setObjectName("menubar")
+        self.menu = QtWidgets.QMenu(self.menubar)
+        self.menu.setObjectName("menu")
+        self.menu_2 = QtWidgets.QMenu(self.menubar)
+        self.menu_2.setObjectName("menu_2")
+        self.menu_3 = QtWidgets.QMenu(self.menubar)
+        self.menu_3.setObjectName("menu_3")
+        MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
-        # 动作配置
+        self.toolBar = QtWidgets.QToolBar(MainWindow)
+        self.toolBar.setObjectName("toolBar")
         MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
-        self.actionopen_session_file = QtWidgets.QAction(MainWindow)  # 打开场景文件
+        self.actionopen_session_file = QtWidgets.QAction(MainWindow)
         self.actionopen_session_file.setObjectName("actionopen_session_file")
-        self.actionclose_session_file = QtWidgets.QAction(MainWindow)  # 关闭场景文件
+        self.actionclose_session_file = QtWidgets.QAction(MainWindow)
         self.actionclose_session_file.setObjectName("actionclose_session_file")
-        self.actionreload_session = QtWidgets.QAction(MainWindow)  # 重新载入场景文件
+        self.actionreload_session = QtWidgets.QAction(MainWindow)
         self.actionreload_session.setObjectName("actionreload_session")
-        self.actionsave_recognized_result = QtWidgets.QAction(MainWindow)  # 保存识别结果
+        self.actionsave_recognized_result = QtWidgets.QAction(MainWindow)
         self.actionsave_recognized_result.setObjectName("actionsave_recognized_result")
-        self.actionbuild_connection = QtWidgets.QAction(MainWindow)  # 建立连接
+        self.actionbuild_connection = QtWidgets.QAction(MainWindow)
         self.actionbuild_connection.setObjectName("actionbuild_connection")
-        self.actionclose_connection = QtWidgets.QAction(MainWindow)  # 关闭连接
+        self.actionclose_connection = QtWidgets.QAction(MainWindow)
         self.actionclose_connection.setObjectName("actionclose_connection")
-        self.actionstart_recognize = QtWidgets.QAction(MainWindow)  # 开始识别
-        self.actionstart_recognize.setObjectName("actionstart_recognize")
-        self.actiononline_recognize = QtWidgets.QAction(MainWindow)  # 在线识别
+        self.actiononline_recognize = QtWidgets.QAction(MainWindow)
         self.actiononline_recognize.setObjectName("actiononline_recognize")
-        self.actionAbout = QtWidgets.QAction(MainWindow)  # 关于
+        self.actionAbout = QtWidgets.QAction(MainWindow)
         self.actionAbout.setObjectName("actionAbout")
-        self.actionHelp = QtWidgets.QAction(MainWindow)  # 帮助
+        self.actionHelp = QtWidgets.QAction(MainWindow)
         self.actionHelp.setObjectName("actionHelp")
-
-        # 菜单栏配置，添加动作
-        self.menubar = QtWidgets.QMenuBar(MainWindow)  # 主菜单
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1302, 24))
-        self.menubar.setObjectName("menubar")
-        self.menu = QtWidgets.QMenu(self.menubar)  # 文件
-        self.menu.setObjectName("menu")
-        self.menu_2 = QtWidgets.QMenu(self.menubar)  # 连接
-        self.menu_2.setObjectName("menu_2")
-        self.menu_3 = QtWidgets.QMenu(self.menubar)  # 关于
-        self.menu_3.setObjectName("menu_3")
-        MainWindow.setMenuBar(self.menubar)
-
-        # "文件"菜单
+        self.actionstart_recognize = QtWidgets.QAction(MainWindow)
+        self.actionstart_recognize.setObjectName("actionstart_recognize")
         self.menu.addAction(self.actionopen_session_file)
         self.menu.addAction(self.actionclose_session_file)
         self.menu.addAction(self.actionreload_session)
         self.menu.addSeparator()
         self.menu.addAction(self.actionsave_recognized_result)
-
-        # "连接"菜单
         self.menu_2.addAction(self.actionbuild_connection)
         self.menu_2.addAction(self.actionclose_connection)
         self.menu_2.addSeparator()
         self.menu_2.addAction(self.actionstart_recognize)
         self.menu_2.addAction(self.actiononline_recognize)
-
-        # "关于"菜单
         self.menu_3.addAction(self.actionAbout)
         self.menu_3.addSeparator()
         self.menu_3.addAction(self.actionHelp)
-
-        # 主菜单
-        self.menubar.addAction(self.menu.menuAction())  # 添加"文件"菜单
-        self.menubar.addAction(self.menu_2.menuAction())  # 添加"连接"菜单
-        self.menubar.addAction(self.menu_3.menuAction())  # 添加"关于"菜单
-
-        # 工具栏
-        self.toolBar = QtWidgets.QToolBar(MainWindow)
-        self.toolBar.setObjectName("toolBar")
-
-        # 工具栏配置，添加动作
+        self.menubar.addAction(self.menu.menuAction())
+        self.menubar.addAction(self.menu_2.menuAction())
+        self.menubar.addAction(self.menu_3.menuAction())
         self.toolBar.addAction(self.actionopen_session_file)
         self.toolBar.addSeparator()
         self.toolBar.addAction(self.actionstart_recognize)
@@ -178,12 +136,9 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def slot_init(self):
-        self.
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "三维目标识别系统"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "TextLabel"))
         self.pushButton.setText(_translate("MainWindow", "打开点云"))
         self.pushButton_2.setText(_translate("MainWindow", "打开相机"))
@@ -216,5 +171,3 @@ if __name__ == '__main__':
     ui.setupUi(main_window)
     main_window.show()
     sys.exit(app.exec_())
-
-

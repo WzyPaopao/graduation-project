@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/wzy/projects/master_degreee/kinect_test/libfreenect2/tools/generate_resources.cpp
+iostream
+-
+iomanip
+-
+fstream
+-
+string
+-
+
