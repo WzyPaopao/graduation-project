@@ -13,7 +13,3 @@ stereoStandard.py中的standard方法为标定方法，能够遍历棋盘图片�
 ## 2. 进度
 
 完成角点寻找，初步完成相机标定工作
-
-### 补充
-
-仓库的token: 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
