@@ -8,20 +8,21 @@ import open3d as o3d
 
 
 def main():
-    point_number = 256
+    point_number = 512
     data = np.loadtxt('../rabbit_2048.txt')
     # draw_from_data(data, color=False)
 
     random_idx = np.random.randint(0, 2048, (point_number,))
     random_sample_data = data[random_idx]
+    np.savetxt('../random_sample_rabbit_{}.txt'.format(point_number), random_sample_data)
     # draw_from_data(random_sample_data, color=False)
 
     _, farthest_sample_data = farthest_point_sample(data, point_number)
+    np.savetxt('../farthest_sample_rabbit_{}.txt'.format(point_number), farthest_sample_data)
     # draw_from_data(farthest_sample_data, color=False)
-
-    save_ply('./rabbit_2048.ply', data)
-    save_ply('./random_rabbit_256.ply', random_sample_data)
-    save_ply('./farthest_rabbit_256.ply', farthest_sample_data)
+    # save_ply('./rabbit_2048.ply', data)
+    # save_ply('./random_rabbit_256.ply', random_sample_data)
+    # save_ply('./farthest_rabbit_256.ply', farthest_sample_data)
 
 
 def save_ply(path, data):
