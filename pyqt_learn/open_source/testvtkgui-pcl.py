@@ -27,7 +27,7 @@ class Mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # Create source
         # fileName = "D:\\rabbit.pcd";  # 注意更换自己的pcd点云文件
         # cloud = pcl.load_XYZRGB(fileName)
-        fileName = './rabbit.pcd'
+        fileName = '../../rabbit.pcd'
         pcd = o3d.io.read_point_cloud(fileName)
         # cloud = pcl.load_XYZRGB(fileName)
         cloud = np.asarray(pcd.points)
