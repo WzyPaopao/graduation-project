@@ -28,8 +28,8 @@ import os
 
 index = 16
 pointcloud = np.load(rabbit)
-pointcloud = pointcloud[index]
-print(pointcloud.shape)
+# pointcloud = pointcloud[index]
+# print(pointcloud.shape)
 
 
 # mask_zero = np.zeros(shape=(1024, ))
