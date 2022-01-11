@@ -18,3 +18,29 @@ rabbit = './rabbit.pcd'
 data = PointCloud()
 data.points = Vector3dVector(np.load(rabbit))
 draw_geometries([data])
+
+# from open3d import *
+# import numpy as np
+# import os
+
+
+# index = 16
+# pointcloud = np.load('res/adv_samples.npy')
+# pointcloud = pointcloud[index]
+# print(pointcloud.shape)
+
+
+# # mask_zero = np.zeros(shape=(1024, ))
+# # mask_index = np.random.randint(low=0, high=1023, size=(200))
+# # # mask_zero[mask_index] = 1
+# # mask_zero[100:900:4] = 1
+# # mask = np.expand_dims(mask_zero, axis=-1)
+# # print(mask.sum())
+
+# # pointcloud = pointcloud * mask
+
+# point_cloud = PointCloud()
+# point_cloud.points = Vector3dVector(pointcloud)
+# point_cloud.paint_uniform_color([0, 0, 0])
+
+# draw_geometries([point_cloud])
