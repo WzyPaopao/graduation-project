@@ -1,0 +1,3 @@
+C:\Users\Auggie\Desktop\新建文件夹\mmdetection3d\demo\data\kitti\kitti_000008.bin
+D:\Software\Miniconda3\envs\mmlab\python.exe
+D:\Software\Miniconda3\envs\mmlab\python.exe -c "import sys;print(sys.executable);print(sys.version);"

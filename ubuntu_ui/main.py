@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from final_ui.tool import text_browser_append_text
 
 
 class Ui_MainWindow(object):
@@ -259,3 +260,40 @@ class Ui_MainWindow(object):
         self.actiona_7.setText(_translate("MainWindow", "删除数据集"))
         self.actiona_8.setText(_translate("MainWindow", "修改深度图"))
         self.actiona_9.setText(_translate("MainWindow", "修改数据集"))
+
+        out_text = \
+'''libva info: VA-API version 1.7.0
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+[Error] [VaapiRgbPacketProcessorImpl] vaInitialize(display, &major_ver, &minor_ver): unknown libva error
+Packet pipeline: OpenGLPacketPipeline
+[Info] [Freenect2Impl] enumerating devices...
+[Info] [Freenect2Impl] 6 usb devices connected
+[Info] [Freenect2Impl] found valid Kinect v2 @2:5 with serial 018135364647
+[Info] [Freenect2Impl] found 1 devices
+[Info] [Freenect2DeviceImpl] opening...
+[Info] [Freenect2DeviceImpl] transfer pool sizes rgb: 20*16384 ir: 60*8*33792
+[Info] [Freenect2DeviceImpl] opened
+[Info] [Freenect2DeviceImpl] starting...
+[Debug] [Freenect2DeviceImpl] status 0x090000: 9729
+[Debug] [Freenect2DeviceImpl] status 0x090000: 9731
+[Info] [Freenect2DeviceImpl] submitting rgb transfers...
+[Info] [Freenect2DeviceImpl] submitting depth transfers...
+[Debug] [DepthPacketStreamParser] not all subsequences received 0
+[Info] [Freenect2DeviceImpl] started
+[Debug] [DepthPacketStreamParser] not all subsequences received 992
+[Info] [OpenGLDepthPacketProcessor] avg. time: 4.769ms -> ~209.688Hz
+[Info] [TurboJpegRgbPacketProcessor] avg. time: 14.899ms -> ~67.1186Hz
+[Info] [OpenGLDepthPacketProcessor] avg. time: 4.11849ms -> ~242.807Hz
+[Info] [TurboJpegRgbPacketProcessor] avg. time: 14.076ms -> ~71.0431Hz
+[Info] [OpenGLDepthPacketProcessor] avg. time: 4.20424ms -> ~237.855Hz
+[Info] [TurboJpegRgbPacketProcessor] avg. time: 12.6076ms -> ~79.317Hz
+[Info] [OpenGLDepthPacketProcessor] avg. time: 4.11849ms -> ~242.807Hz
+[Info] [TurboJpegRgbPacketProcessor] avg. time: 14.076ms -> ~71.0431Hz
+[Info] [OpenGLDepthPacketProcessor] avg. time: 4.20424ms -> ~237.855Hz
+[Info] [TurboJpegRgbPacketProcessor] avg. time: 12.6076ms -> ~79.317Hz
+[Info] [OpenGLDepthPacketProcessor] avg. time: 6.03519ms -> ~165.695Hz
+[Info] [TurboJpegRgbPacketProcessor] avg. time: 13.0635ms -> ~76.5489Hz
+[Info] [OpenGLDepthPacketProcessor] avg. time: 5.70712ms -> ~175.22Hz
+[Info] [TurboJpegRgbPacketProcessor] avg. time: 13.0474ms -> ~76.6434Hz
+'''
+        # text_browser_append_text(self.textBrowser, out_text)
