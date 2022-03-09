@@ -1,0 +1,3 @@
+[submodule "kinect_test/pylibfreenect2"]
+	path = kinect_test/pylibfreenect2
+	url = https://github.com/r9y9/pylibfreenect2.git
